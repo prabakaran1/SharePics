@@ -1,10 +1,12 @@
-# Get to know with UI designing
+# Started constructing of SharePics
+**SharePics** is a photo sharing web based application.<br>
+It's started by page **index.php**, The main components of HTML is break into chunks are followed.
 
-It is a **signup page** with **side bar, header and footer** ; why choices the signup page?
+ - header
+ - footer
+ - action
+ - upload/
+ This chunks are kept in the folder **templates**.
 
- - Because it contain all the component
- - With include of it added header and footer
- - And I'm added the side bar to it for the look
-
-This page is made up of **components, templates and snippets** took from bootstrap 5.
-By this can kick start the UI designing.
+The templates are loaded by the function called **load.php** under **libs**.<br>
+To load the templates in index for that have to include the file **libs/load.php** at the first line of the code in index.
