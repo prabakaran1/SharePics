@@ -11,6 +11,7 @@
   <meta name="generator" content="Hugo 0.104.2">
   <title>SharePics</title>
 
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
   <link href="/SharePics/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
@@ -75,14 +76,8 @@
   </header>
 
   <main>
-
-    <section class="py-5 text-center container">
-      <?php load_template("_action"); ?>
-    </section>
-
-    <div class="album py-5 bg-light">
-      <?php load_template("_upload"); ?>
-    </div>
+    
+    <?php load_template("_login"); ?>
 
   </main>
 
