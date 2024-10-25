@@ -1,5 +1,6 @@
 <pre>
 <?php
+
 // $cookie_name = "testscript";
 // $cookie_value = $_SERVER['REQUEST_URI'];
 // setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
@@ -13,6 +14,10 @@ print("_FILES \n");
 print_r($_FILES);
 print("_COOKIES \n");
 print_r($_COOKIE);
+// hash function testing
+print("\nMd5 hash\n");
+$pass = isset($_GET['pass']) ? $_GET['pass'] : "RandomPasswordThatIsSecure";
+echo(md5($pass));
 
 ?>
 </pre>
