@@ -1,8 +1,9 @@
 <?php
+
 include 'libs/load.php';
 
 $user = "PK";
-$pass = "123456";
+$pass = isset($_GET['pass']) ? $_GET['pass'] : '';
 $result = null;
 
 if (isset($_GET['logout'])) {
@@ -22,7 +23,7 @@ if (Session::get('is_loggedin')) {
         Session::set('is_loggedin', true);
         Session::set('session_user', $result);
     } else {
-        echo "Login failed <br>";
+        echo "Login failed, $user <br>";
     }
 }
 echo <<<EOL

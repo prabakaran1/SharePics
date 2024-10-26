@@ -5,13 +5,16 @@ class User
     private $conn;
     public static function signup($user, $pass, $email, $phone)
     {
-        $pass = md5(strrev(md5($pass))); // security through obscurity
+        $options = [
+            'cost' => 9,
+        ];
+        $pass = password_hash($pass, PASSWORD_BCRYPT, $options);
         $conn = Database::getConnection();
         $sql = "INSERT INTO `signup` (`username`, `password`, `email`, `phone`, `active`, `blocked`, `time`)
         VALUES ('$user', '$pass', '$email', '$phone', '1', '0', now());";
         try {
             $result = $conn->query($sql);
-            if($result) {
+            if ($result) {
                 return true;
             } else {
                 return false;
@@ -32,13 +35,12 @@ class User
 
     public static function login($user, $pass)
     {
-        $pass = md5(strrev(md5($pass)));
         $query = "SELECT * FROM `signup` WHERE `username` = '$user'";
         $conn = Database::getConnection();
         $result = $conn->query($query);
         if ($result->num_rows == 1) {
             $row = $result->fetch_assoc();
-            if ($row['password'] == $pass) {
+            if (password_verify($pass, $row['password'])) {
                 return $row;
             } else {
                 return false;

@@ -1,5 +1,7 @@
 # Basic login page is start built
 
+The Password hash function is implemented in the signup and login function<br>
+<br>
 The DB is connected and the login test page is built<br>
 The **value** is stored in DB is get and **compared in login**<br>
 The basic login test page is created to check the connection<br>
